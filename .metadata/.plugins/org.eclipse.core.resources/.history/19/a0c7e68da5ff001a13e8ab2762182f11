@@ -1,0 +1,12 @@
+package servletex.model;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class AddService implements MyService{
+	@Override
+	public String service(HttpServletRequest req, HttpServletResponse resp) {
+		int n1 = Integer.parseInt(req.getParameter("n1"));
+		int n2 = Integer.parseInt(req.getParameter("n2"));
+}
+}

@@ -1,0 +1,5 @@
+package servletex.model;
+
+public class SignupService {
+
+}

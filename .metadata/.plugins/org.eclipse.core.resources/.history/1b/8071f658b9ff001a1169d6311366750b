@@ -1,0 +1,24 @@
+package servletex.model;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class SignupService implements MyService{
+	
+	@Override
+	public String service(HttpServletRequest req, HttpServletResponse resp) {
+		System.out.println("회원가입");
+		if(req.getMethod().equals("POST")) {
+			return "/view/signup.jsp";
+		} else {
+			String name = req.getParameter("name");
+			String id = req.getParameter("id");
+			String pw1 = req.getParameter("pw1");
+			String pw2 = req.getParameter("pw2");
+			req.setAttribute("name", name);
+			return "/view/signup.jsp";
+		}
+		
+	}
+
+}

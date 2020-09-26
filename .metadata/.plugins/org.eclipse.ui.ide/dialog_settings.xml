@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\user\Desktop\9월(JAVA)_webProject\simplesurveyMVC"/>
+			<item value="C:\Users\user\Desktop\9월(JAVA)_webProject\simplesurvey5"/>
+			<item value="C:\Users\user\Desktop\9월(JAVA)_webProject\simplesurvey4"/>
+			<item value="C:\Users\user\Desktop\9월(JAVA)_webProject\simplesurvey3"/>
+			<item value="C:\Users\user\Desktop\9월(JAVA)_webProject\simplesurvey2"/>
+			<item value="C:\Users\user\Desktop\9월(JAVA)_webProject\simplesurvey"/>
+			<item value="C:\Users\user\Downloads\보충강의자료(설문조사사이트만들기) (1)\simplesurvey"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+</section>

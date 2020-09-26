@@ -1,0 +1,29 @@
+package servletex;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class NowServlet extends HttpServlet { // Model의 역할
+	// jsp - View
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html; charset=utf-8");
+		
+		PrintWriter pw = resp.getWriter();
+		pw.println("<html>");
+		pw.println("<head><title>Now</title></head>");
+		pw.println("<body>");
+		pw.println("현재 시간은 ");
+		pw.println(new Date());
+		pw.println("입니다.");
+		pw.println("</body></html>");
+	
+	}
+
+}

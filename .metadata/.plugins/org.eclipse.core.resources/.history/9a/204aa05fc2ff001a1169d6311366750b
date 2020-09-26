@@ -1,0 +1,88 @@
+package servletex;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+public class SignupDao {
+	private static SignupDao instance = null;
+	
+	private SignupDao(){
+		System.out.println("Dao객체 생성");
+	}
+	
+	public static SignupDao getInstance() {
+		if (instance == null) {
+			synchronized (SignupDao.class) {
+				instance = new SignupDao();
+			}
+		}
+		return instance;
+	}
+	
+	public void insert(SignupDao dto){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try{
+			conn = ConnectionUtil.getConnection();
+			String sql = "insert into SIGNUPDATA values(SIGNUPDATA_SEQ.nextval, ?, ?, ?, ?)";
+			pstmt = conn.prepareStatement(sql);
+			/* 요청 파라미터가 세팅된 객체에서 값을 꺼내서 활용한다. */
+			pstmt.setInt(1, dto.getName());
+			pstmt.setString(2, dto.getGender());
+			pstmt.setInt(3, dto.getSalary());
+			pstmt.setInt(4, dto.getSalarydesired());
+			int ret = pstmt.executeUpdate();
+			System.out.println(ret+"개의 행이 삽입되었습니다.");
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(pstmt != null){
+					pstmt.close();
+				}
+				if(conn != null){
+					conn.close();
+				}
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+	}
+
+	public ArrayList<SignupDto> getSurveyAll(){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<SignupDto> result = new ArrayList<SignupDto>();
+		try{
+			conn = ConnectionUtil.getConnection();
+			String sql = "select * from SIGNUPDATA";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				SignupDto tmp = new SignupDto();
+				tmp.setName(rs.getString("name"));
+				tmp.setId(rs.getString("id"));
+				tmp.setPw1(rs.getString("pw1"));
+				tmp.setPw2(rs.getString("pw2"));
+				result.add(tmp);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(pstmt != null){
+					pstmt.close();
+				}
+				if(conn != null){
+					conn.close();
+				}
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+		return result;
+	}
+}

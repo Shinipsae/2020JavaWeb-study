@@ -1,0 +1,14 @@
+package servletex.model;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class SignupService implements MyService{
+	
+	@Override
+	public String service(HttpServletRequest req, HttpServletResponse resp) {
+
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package servletex.model;
+
+public interface Service {
+
+}

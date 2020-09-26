@@ -1,0 +1,25 @@
+package registerjdbc;
+
+import java.util.List;
+
+public class Test {
+	public static void main(String[] args) {
+		MemberDao dao = new MemberDao();
+		//dao.insertMember(new Member(0, "test@test.com", "1", "¿øºó"));
+		List<Member> ls = dao.selectAll();
+		for(Member m : ls) {
+			System.out.println(m);
+		}
+	}
+}
+
+/*
+ * sql plus Á¢¼Ó
+ * conn sys as sysdba;
+ * conn system/1234
+ * exec DBMS_XDB.SETHTTPPORT(5050);
+ * create user tester identified by 1234;
+ * grant connect, resource to tester;
+ * conn tester/1234;
+ * */
+ 
